@@ -9,7 +9,7 @@ let Person;
 let personSchema = new mongoose.Schema({
   name: {type: String, required: true},
   age: Number,
-  favoriteFodds: [String]
+  favoriteFoods: [String]
 });
 
 Person = mongoose.model('Person', personSchema);
