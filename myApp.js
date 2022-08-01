@@ -22,9 +22,9 @@ const createAndSavePerson = (done) => {
   });
   personEntry.save((err, data) => {
     if(err) {
-      return console.error()
+      return console.error(err)
     } else {
-      done(none, data);
+      done(null, data);
     }
   });
 
