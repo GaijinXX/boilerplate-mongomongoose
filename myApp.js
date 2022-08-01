@@ -45,11 +45,11 @@ const findPeopleByName = (personName, done) => {
 };
 
 const findOneByFood = (food, done) => {
-  Person.findOne({favoriteFoods: personName}, (err, docs) => {
+  Person.findOne({favoriteFoods: food}, (err, doc) => {
     if(err) {
       done(err);
     } else {
-      done(null, docs);
+      done(null, doc);
     }
   });
 };
