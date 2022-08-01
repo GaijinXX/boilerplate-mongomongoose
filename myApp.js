@@ -21,15 +21,17 @@ const createAndSavePerson = (done) => {
     favoriteFoods: ["diarrhea", "piss", "cum"]
   }).save()
     .then(doc => {
-      console.log(doc);
       done(null, doc);})
     .catch(err => {
-      console.error(err)
       done(err);});
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
-  done(null /*, data*/);
+  Person.create(arrayOfPeople)
+  .then(docs => {
+    done(null, docs);})
+  .catch(err => {
+    done(err);});
 };
 
 const findPeopleByName = (personName, done) => {
